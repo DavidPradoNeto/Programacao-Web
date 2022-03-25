@@ -154,6 +154,10 @@ line-height: 1.5;
 
 
   @media (max-width: 450px) {
+      
+    .esqueceu, .ou{
+      font-size: 12px;
+    }
     .separa {
       margin: 0px;
     }
@@ -185,6 +189,11 @@ line-height: 1.5;
     height: 210px;
     margin: auto;
     top: 510px;
+    }
+
+    .entrar, .google{
+        margin: 15px auto;
+        width: 250px;
     }
 
 
