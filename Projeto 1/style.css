@@ -1,0 +1,192 @@
+.homem img{
+    position: fixed;
+    width: 700px;
+    height: 560px;
+    right: 10%;
+    top: 15%;
+    }
+
+  .cabecalho {
+    margin: 0 0 0 10%;
+    height: 40px;
+    padding: 12px;
+  }
+  .logo-cabecalho img{
+    margin-left: 10%;
+    width: 135px;
+    height: 34px;
+  }
+
+  .separa {
+    margin: 25%;
+    width: auto;
+  }
+
+  .nav-cadastre {
+    padding: 12px;
+    color: gray;
+    font-size: 20px;
+    
+  }
+
+  .nav-cadastre:hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  .nav-entrar {
+    padding: 12px;
+    font-size: 20px;
+    color: rgba(10, 102, 194);
+    border: 1px;
+    border-color: rgba(10, 102, 194);
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+  }
+
+  .nav-entrar:hover {
+    background-color: rgba(10, 102, 194, .1);
+  }
+
+
+  .conteudo {
+    margin: 0 0 0 10%;
+    margin-left: 20%;
+  }
+  
+  .login-box {
+  width: auto;
+  height: 350px;
+}
+
+.login-fields {
+    padding: 15px;
+    
+}
+input{
+    border: 1px solid;
+    margin-top: 12px;
+    width: 450px;
+    height: 30px;
+}
+
+
+
+.esqueceu {
+    margin-top: 12px;
+}
+
+.entrar {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: auto;
+    block-size: 40px;
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border: 1px;
+    border-color: rgba(10, 102, 194);
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+    background-color: rgba(10, 102, 194);
+    max-width: 350px;
+}
+
+.entrar:hover {
+    background-color: rgb(6, 75, 143);
+}
+
+.google {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: auto;
+    block-size: 40px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px;
+    border-radius: 20px 20px 20px 20px;
+    border-style: solid;
+    max-width: 350px;
+    min-width: 200px;
+}
+
+.texto1 {
+  color: rgba(184, 115, 51);
+  font-weight: 400;
+font-size: 50px;
+line-height: 1.5;
+}
+.google:hover {
+    background-color: rgba(0, 0, 0, .1)
+}
+
+.conteudo {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+.ou {
+    padding: 15px;
+    margin-left: 150px;
+    color: gray;
+}
+
+  @media (max-width: 1120px) {
+    .nav-cadastre { 
+      font-size: 90%;
+    }
+
+    .nav-entrar {
+      font-size: 90%;
+    }
+    .logo-cabecalho img{
+      width: 122px;
+      height: 30px;
+    }
+
+  }
+
+  @media (max-width: 750px) {
+    .separa {
+      margin: 5%;
+    }
+  }
+
+
+  @media (max-width: 450px) {
+    .separa {
+      margin: 0px;
+    }
+    .login-box, .texto1{
+      position: fixed;
+      font-size: 1.6rem;
+      left: 40px;
+    }
+    input {
+        width: 250px;
+    }
+
+    .logo-cabecalho img{
+      width: 25%;
+      height: auto;
+
+    }
+
+    .ou {
+      margin-left: 70px;
+    }
+   .cabecalho {
+      margin: 0px;
+    }
+
+    .homem img{
+    position: fixed;
+    width: 300px;
+    height: 210px;
+    margin: auto;
+    top: 510px;
+    }
+
+
+  }
+

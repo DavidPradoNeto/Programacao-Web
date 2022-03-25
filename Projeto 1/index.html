@@ -5,176 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    
     <title>Linkedin</title>
-
-    <style>
-        
-       .homem {
-        position: fixed;
-        width: 374px;
-        height: 214px;
-        top: 100px;
-        right: 5px;
-        }
-    
-      .cabecalho {
-        margin: 0 0 0 10%;
-        height: 40px;
-        padding: 12px;
-      }
-      .logo-cabecalho img{
-        width: 135px;
-        height: 34px;
-      }
-
-      .separa {
-        margin: 25%;
-        width: auto;
-      }
-
-      .nav-cadastre {
-        padding: 12px;
-        color: gray;
-        font-size: 20px;
-        
-      }
-
-      .nav-cadastre:hover {
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, .1);
-      }
-
-      .nav-entrar {
-        padding: 12px;
-        font-size: 20px;
-        color: rgba(10, 102, 194);
-        border: 1px;
-        border-color: rgba(10, 102, 194);
-        border-radius: 20px 20px 20px 20px;
-        border-style: solid;
-      }
-
-      .nav-entrar:hover {
-        background-color: rgba(10, 102, 194, .1);
-      }
-
-
-      .conteudo {
-        margin: 0 0 0 10%;
-      }
-      
-      .login-box {
-      width: auto;
-      height: 350px;
-    }
-
-    .login-fields {
-        padding: 15px;
-        
-    }
-    input{
-        border: 1px solid;
-        margin-top: 12px;
-        width: 450px;
-        height: 30px;
-    }
-
- 
-
-    .esqueceu {
-        margin-top: 12px;
-    }
-
-    .entrar {
-        margin-left: 30px;
-        margin-right: 30px;
-        width: auto;
-        block-size: 40px;
-        margin-top: 15px;
-        font-size: 20px;
-        color: white;
-        text-align: center;
-        border: 1px;
-        border-color: rgba(10, 102, 194);
-        border-radius: 20px 20px 20px 20px;
-        border-style: solid;
-        background-color: rgba(10, 102, 194);
-        max-width: 350px;
-    }
-
-    .entrar:hover {
-        background-color: rgb(6, 75, 143);
-    }
-
-    .google {
-        margin-left: 30px;
-        margin-right: 30px;
-        width: auto;
-        block-size: 40px;
-        margin-top: 15px;
-        font-size: 20px;
-        text-align: center;
-        border: 1px;
-        border-radius: 20px 20px 20px 20px;
-        border-style: solid;
-        max-width: 350px;
-    }
-
-
-    .google:hover {
-        background-color: rgba(0, 0, 0, .1)
-    }
-
-
-    .ou {
-        padding: 15px;
-        margin-left: 150px;
-        color: gray;
-    }
-
-      @media (max-width: 1120px) {
-        .nav-cadastre { 
-          font-size: 90%;
-        }
-
-        .nav-entrar {
-          font-size: 90%;
-        }
-        .logo-cabecalho img{
-          width: 122px;
-          height: 30px;
-        }
-
-      }
-
-      @media (max-width: 750px) {
-        .separa {
-          margin: 5%;
-        }
-      }
-
-
-      @media (max-width: 450px) {
-        .separa {
-          margin: 0px;
-        }
-
-        input {
-            width: 280px;
-        }
-
-        .ou {
-          margin-left: 70px;
-        }
-       .cabecalho {
-          margin: 0px;
-        }
-        
-    
-      }
-
-
-    </style>
 
 </head>
 <body>
@@ -185,23 +18,16 @@
       <span class="nav-entrar">Entrar</span>
     </nav>
     
-    <style type="text/css">
-     #direita{
-      float: right;
-     }
-      </style>
-    
 
     <div class="conteudo">
-      <br>
-        <br>
+
             <br>
-      <font color="#8f5849" face="Helvetica" size="10px">Conheça a sua nova<br> comunidade profissional</font>
+      <span class="texto1"> Conheça a sua nova<br> comunidade profissional</span>
         <br>
             <br>
                 <br>
         
-      <span class="login-box">
+      <div class="login-box">
         <div class="login-fields">
             <div class="email">
                 <input type="text" placeholder="E-mail ou número de telefone">
@@ -216,10 +42,10 @@
             <div class="ou">_____ ou ____</div>
             <div class="google"><span class="google-ico"><img src="images/google.png" alt="google icon"></span> Entrar com o Google</div>
         </div>
-            <div class="homem"><span class="homem"><img src="images/homem.jpg" align="right" width="600" height="520" id="direita"/>
-          
-    </span>
         
-  </div>
+        <div class="homem">
+          <img src="images/homem.jpg"/>
+        </div>
+    </div>
 </body>
 </html>
