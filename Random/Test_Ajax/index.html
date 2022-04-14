@@ -41,6 +41,7 @@
             imagem.src = "";
             mostraLoader("visible");
             request.open('GET', 'https://dog.ceo/api/breeds/image/random', true);
+
             request.onreadystatechange = function () {
                 if (request.readyState === 4 && request.status === 200){
                     var response = JSON.parse(request.responseText);
