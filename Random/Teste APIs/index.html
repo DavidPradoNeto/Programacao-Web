@@ -21,7 +21,17 @@
             result = document.querySelector('.result');
 
             btn.addEventListener('click', () => {
-                
+                var url = 'https://newsapi.org/v2/everything?' +
+                          'q='+ pesquisa.value +'&' +
+                          'country=br&' +
+                          'sortBy=popularity&' +
+                          'apiKey=bbd0d5eeca794a479914c6f77ef633fb';
+
+                var req = new Request(url);
+
+                fetch(req).then(function(response) {
+                    console.log(response.json());
+                })
             })
 
 
