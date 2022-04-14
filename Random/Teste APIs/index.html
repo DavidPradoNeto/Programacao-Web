@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./cors.js"></script>
     <title>Teste APIs</title>
     
 </head>
@@ -19,32 +18,10 @@
 
         let pesquisa = document.querySelector('.pesquisa'),
             btn = document.querySelector('#pesquisa-btn'),
-            result = document.querySelector('.result'),
-            request = new XMLHttpRequest();
-            request.withCredentials = true;
+            result = document.querySelector('.result');
 
             btn.addEventListener('click', () => {
-                request.open('GET', 'https://imsea.herokuapp.com/api/1?q='+ pesquisa.value);
                 
-                request.setRequestHeader('Access-Control-Allow-Credentials', 'true');
-                request.setRequestHeader('Access-Control-Allow-Origin', 'https://davidpradoneto.github.io');
-                
-                request.onreadystatechange = function () {
-                    if (request.readyState === 4){
-        if(request.status === 200){
-        console.log('Status:', this.status);
-        console.log('Headers:', this.getAllResponseHeaders());
-        console.log('Body:', this.responseText);
-
-                            console.log(request);
-
-        }else{
-            console.log("Erro");
-            console.log(request);
-        }
-    }
-                }
-            request.send(null);        
             })
 
 
