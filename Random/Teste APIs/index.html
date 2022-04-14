@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Teste APIs</title>
     
 </head>
@@ -17,21 +18,26 @@
     <script>
 
         let pesquisa = document.querySelector('.pesquisa'),
-            btn = document.querySelector('#pesquisa-btn'),
-            result = document.querySelector('.result');
+            btn = document.querySelector('#pesquisa-btn');
+
 
             btn.addEventListener('click', () => {
-                var url = 'https://newsapi.org/v2/everything?' +
-                          'q='+ pesquisa.value +'&' +
-                          'country=br&' +
-                          'sortBy=popularity&' +
-                          'apiKey=bbd0d5eeca794a479914c6f77ef633fb';
+                var options = {
+                    method: 'GET',
+                    url: 'https://api.newscatcherapi.com/v2/search',
+                    params: {q: pesquisa.value, lang: 'pt', sort_by: 'relevancy', page: '1'},
+                    headers: {
+                        'x-api-key': 'lfPVBixmh--iKQN3LhMFai9-dCtuQOQmyOA54jvS7eU'
+                    }
+                };
 
-                var req = new Request(url);
+                axios.request(options).then(function (response) {
 
-                fetch(req).then(function(response) {
-                    console.log(response.json());
-                })
+                    console.log(response.status);
+                   
+                }).catch(function (error) {
+                    console.error(error);
+                });
             })
 
 
