@@ -25,7 +25,9 @@
             btn.addEventListener('click', () => {
                 request.open('GET', 'https://imsea.herokuapp.com/api/1?q='+ pesquisa.value);
                 
+                request.setRequestHeader('Access-Control-Allow-Credentials', 'true');
                 request.setRequestHeader('Access-Control-Allow-Origin', 'https://davidpradoneto.github.io');
+                
                 request.onreadystatechange = function () {
                     if (request.readyState === 4){
         if(request.status === 200){
