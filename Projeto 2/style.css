@@ -55,6 +55,10 @@ body {
   }
 
   .separa {
+    margin: 0 450px;
+    width: auto;
+  }
+  .separa-logado{
     margin: 0 50px;
     width: auto;
   }
@@ -277,7 +281,7 @@ line-height: 1.5;
     transition: 300ms;
   }
 
-  .separa img{
+  .separa-logado img{
     vertical-align: middle;
     width: 32px;
     height: 32px;
@@ -285,7 +289,7 @@ line-height: 1.5;
   }
 
   
-  .separa img:hover{
+  .separa-logado img:hover{
     vertical-align: middle;
     width: 36px;
     height: 36px;

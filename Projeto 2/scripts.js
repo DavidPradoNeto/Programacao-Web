@@ -1,5 +1,5 @@
 function getSession(){
-        if(sessionStorage.getItem('userData')){
+        if(localStorage.getItem('userData')){
             document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
             document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
             loadUser();
@@ -10,7 +10,7 @@ function getSession(){
 function loadUser(){
     mostraLoader(true);
     setTimeout(() => {
-        let { email, first_name, last_name,  avatar } = JSON.parse(sessionStorage.getItem('userData'))
+        let { email, first_name, last_name,  avatar } = JSON.parse(localStorage.getItem('userData'))
         document.querySelector('#userImg').src = avatar;
         document.querySelector('#userDados').innerHTML = first_name+" "+last_name+"<br>"+email;
         mostraLoader(false);
@@ -18,7 +18,7 @@ function loadUser(){
 }
 
 function logout(){
-    sessionStorage.clear();
+    localStorage.clear();
     location.reload();
 }
 
@@ -70,7 +70,7 @@ function getUser(){
                 if (request.readyState === 4 && request.status === 200){
                     var response = JSON.parse(request.responseText),
                         user = response.data[Math.floor(Math.random() * 6)];    // recebe um usuario aleatorio da API
-                        sessionStorage.setItem('userData', JSON.stringify(user));  // armazena esse usuario no localStorage para manter o login
+                        localStorage.setItem('userData', JSON.stringify(user));  // armazena esse usuario no localStorage para manter o login
                 }
             }
             request.send();
