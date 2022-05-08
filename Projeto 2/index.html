@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts.js"></script>
+    
+    <title>Linkedin</title>
+
+</head>
+<body">
+    <section class="pagina-inicial">
+        <nav class="cabecalho">
+        <span class="logo-cabecalho"><img src="images/logo.png" alt="Logo Linkedin"></span>
+        <span class="separa"></span>
+        <span class="nav-cadastre">Cadastre-se agora</span>
+        <span class="nav-entrar">Entrar</span>
+        </nav>
+        
+
+        <div class="conteudo">
+
+            
+        <div class="login-box">
+
+            <div class="login-fields">
+                <span class="texto1"> Conheça a sua nova<br> comunidade profissional</span>
+                <br>
+                    <br>
+                        <br>
+                <span id="invalido"></span>
+                <div class="email">
+                    <input id="login-email" type="text" placeholder="E-mail ou número de telefone">
+                </div>
+                <div class="senha">
+                    <input id="login-senha" type="password" placeholder="Senha">
+                </div>
+
+                <div class="esqueceu"><a id="esqueceu-senha" href="#">Esqueceu a Senha?</a></div>
+
+                <div class="entrar">Entrar</div>
+                <div class="ou">_____ ou ____</div>
+                <div class="google"><img src="images/google.png" alt="google icon"> Entrar com o Google</div>
+            </div>
+            
+            <div class="homem">
+                <img src="images/homem.jpg"/>
+            </div>
+        </div>
+    
+    </section>
+
+    <section class="pagina-logado">
+        <nav class="nav-logado">
+            <span class="logo-cabecalho"><img src="images/logo.png" alt="Logo Linkedin"></span>
+            <span class="separa">
+                <input id="search-bar" type="text" placeholder="Pesquisar" >
+                <img id="buscar" src="images/search-icon.png">
+            </span>
+            <span id="logout" onclick="logout()">Logout</span>
+        </nav>   
+    </section>
+
+
+
+        <script>
+            var entrar = document.querySelector('.entrar');
+
+            entrar.addEventListener('click', () => {
+                var email = document.querySelector('#login-email'),
+                senha = document.querySelector('#login-senha');
+
+                if (validaLogin(email, senha)){
+                    document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
+                    getUser();
+                    document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
+                }
+            });
+            
+
+
+
+            var btn = document.querySelector('#buscar');
+
+
+            document.getElementById('search-bar').addEventListener("keypress", function(event) {
+                if (event.key == "Enter")
+                    document.getElementById('buscar').click();
+            });
+
+            btn.addEventListener('click', () => {
+                var pesquisa = document.querySelector('#search-bar').value;
+                            mostraLoader(true);
+
+                    if(pesquisa == ''){
+                        mostraLoader(false);
+                        document.querySelector('#resultado').innerHTML = "<h2>Digite algo para pesquisar.</h2>";
+                    }else{
+                        document.querySelector('#resultado').innerHTML = "";
+                        buscar(pesquisa);
+                    }
+            });    
+        </script>
+</body>
+</html>
