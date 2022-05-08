@@ -12,7 +12,7 @@
     <title>Linkedin</title>
 
 </head>
-<body">
+<body onload="getSession()">
     <section class="pagina-inicial">
         <nav class="cabecalho">
         <span class="logo-cabecalho"><img src="images/logo.png" alt="Logo Linkedin"></span>
@@ -44,7 +44,7 @@
 
                 <div class="entrar">Entrar</div>
                 <div class="ou">_____ ou ____</div>
-                <div class="google"><img src="images/google.png" alt="google icon"> Entrar com o Google</div>
+                <div class="google" onclick="entrarGoogle()"><img src="images/google.png" alt="google icon"> Entrar com o Google</div>
             </div>
             
             <div class="homem">
@@ -63,6 +63,14 @@
             </span>
             <span id="logout" onclick="logout()">Logout</span>
         </nav>   
+
+        
+        <section class="nav-logado result">
+            <div class="userBox"><img id="userImg"><p id="userDados"></p></div>
+            <span class="loader"></span>
+            <div id="resultado"></div>
+        </section>
+
     </section>
 
 
@@ -78,6 +86,7 @@
                     document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
                     getUser();
                     document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
+                    loadUser();
                 }
             });
             

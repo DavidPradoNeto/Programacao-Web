@@ -1,4 +1,16 @@
 
+  .loader {
+    position: absolute;
+    margin: 100px 400px;
+    border: 20px solid #f3f3f3;
+    border-top: 20px solid #181818d1;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: spin 1s linear infinite;
+    visibility: hidden;
+  }
+  
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -292,4 +304,17 @@ line-height: 1.5;
 
   #resultado {
     display: grid;
+  }
+
+  #logout {
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 25px;
+    transition: 300ms;
+    margin-left: 150px;
+  }
+
+  #logout:hover {
+    background-color: rgba(10, 102, 194, .5);
+    padding: 12px;
   }
