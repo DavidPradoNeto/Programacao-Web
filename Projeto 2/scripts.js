@@ -1,20 +1,9 @@
 function getSession(){
-        if(localStorage.getItem('userData')){
+        if(localStorage.getItem('token')){
             document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
             document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
-            loadUser();
         }
             
-}
-
-function loadUser(){
-    mostraLoader(true);
-    setTimeout(() => {
-        let { email, first_name, last_name,  avatar } = JSON.parse(localStorage.getItem('userData'))
-        document.querySelector('#userImg').src = avatar;
-        document.querySelector('#userDados').innerHTML = first_name+" "+last_name+"<br>"+email;
-        mostraLoader(false);
-    }, "1000")
 }
 
 function logout(){
@@ -56,24 +45,39 @@ function validaLogin(email, senha) {
 
 function entrarGoogle(){
     document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
-    getUser();
     document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
-    loadUser();
 }
 
-function getUser(){
-    var request = new XMLHttpRequest();
+function login(user, password){
 
-            request.open('GET', 'https://reqres.in/api/users', true);
+    const data = { 
+       email: user.value,
+       password: password.value
+    };
 
-            request.onreadystatechange = function () {
-                if (request.readyState === 4 && request.status === 200){
-                    var response = JSON.parse(request.responseText),
-                        user = response.data[Math.floor(Math.random() * 6)];    // recebe um usuario aleatorio da API
-                        localStorage.setItem('userData', JSON.stringify(user));  // armazena esse usuario no localStorage para manter o login
-                }
+        fetch('https://reqres.in/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.token){
+            document.querySelector('.pagina-inicial').style = "width: 0; height: 0; visibility: hidden;";
+            user = data.token 
+            localStorage.setItem('token', data.token);  // armazena esse usuario no localStorage para manter o login
+            document.querySelector('.pagina-logado').style = "width: 100%; height: 100%; visibility: visible;";
+            }else{
+                console.log(data);
+                var erro = document.querySelector('#invalido');
+                erro.innerHTML = "Usuário não cadastrado";
+                erro.style.visibility = "visible"; 
             }
-            request.send();
+        }).catch((error) => {
+            console.log(error);
+        });
 }
 
 function buscar(pesquisa){
@@ -130,12 +134,14 @@ function buscar(pesquisa){
                     mostraLoader(false);
                                                                      
                 }else{
-                    document.querySelector('#resultado').innerHTML = resultado.status
+                    document.querySelector('#resultado').innerHTML = resultado.status;
                     mostraLoader(false);
                 }
         }
     
     }).catch(function (error) {
-        console.error(error);
+            console.log(error);
+            document.querySelector('#resultado').innerHTML = "Monthly API free calls limit reached";
+            mostraLoader(false);
     });
 }
